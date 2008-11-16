@@ -2,7 +2,7 @@
 %if %mdkversion < 200900
 %define ff_ver 2.0.0.17
 %else
-%define ff_ver 3.0.3
+%define ff_ver 3.0.4
 %endif
 %define realname speed_dial
 
@@ -11,12 +11,12 @@
 
 Summary: Speed dial extension for firefox
 Name: firefox-ext-speed-dial
-Version: 0.7.2
-Release: %mkrel 2
+Version: 0.7.2.7
+Release: %mkrel 1
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Networking/WWW
 URL: http://speeddial.uworks.net/
-Source: https://addons.mozilla.org/en-US/firefox/downloads/file/34346/speed_dial-%version-fx.xpi
+Source: http://speeddial.uworks.net/speed_dial-%version-fx.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: mozilla-firefox = %{ff_epoch}:%{ff_ver}
 
