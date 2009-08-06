@@ -1,5 +1,5 @@
 %define ff_epoch 0
-%define ff_ver 3.0.11
+%define ff_ver 3.0.13
 %define realname speed_dial
 
 %define _mozillapath %{_libdir}/firefox-%{ff_ver}
@@ -7,14 +7,14 @@
 
 Summary: Speed dial extension for firefox
 Name: firefox-ext-speed-dial
-Version: 0.9.0.8
-Release: %mkrel 2
+Version: 0.9.1
+Release: %mkrel 1
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Networking/WWW
 URL: http://speeddial.uworks.net/
 Source: http://speeddial.uworks.net/speed_dial-%version-fx.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: mozilla-firefox >= %{ff_epoch}:%{ff_ver}
+Requires: firefox = %{ff_epoch}:%{ff_ver}
 
 %description
 With Speed Dial, you can easily access your most used websites. To show
@@ -52,5 +52,4 @@ rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%dir %_mozillapath
-%{_mozillaextpath}
+%{_mozillaextpath}/*
