@@ -12,6 +12,7 @@ URL: http://speeddial.uworks.net/
 Source: http://speeddial.uworks.net/speed_dial-%version-fx.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: firefox = %{firefox_epoch}:%{firefox_version}
+BuildRequires: firefox-devel
 
 %description
 With Speed Dial, you can easily access your most used websites. To show
