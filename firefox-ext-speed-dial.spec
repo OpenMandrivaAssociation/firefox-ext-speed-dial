@@ -4,8 +4,8 @@
 
 Summary: Speed dial extension for firefox
 Name: firefox-ext-speed-dial
-Version: 0.9.1.1
-Release: %mkrel 6
+Version: 0.9.5.1
+Release: %mkrel 1
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Networking/WWW
 URL: http://speeddial.uworks.net/
