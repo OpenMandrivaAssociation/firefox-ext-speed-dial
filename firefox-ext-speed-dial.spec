@@ -2,6 +2,8 @@
 
 %define _mozillaextpath %{firefox_mozillapath}/extensions
 
+%define subrel 1
+
 Summary: Speed dial extension for firefox
 Name: firefox-ext-speed-dial
 Version: 0.9.5.1
