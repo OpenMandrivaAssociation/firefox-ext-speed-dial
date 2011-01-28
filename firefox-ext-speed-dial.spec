@@ -1,17 +1,16 @@
 %define realname speed_dial
 
-%define _mozillaextpath %{firefox_mozillapath}/extensions
-
 Summary: Speed dial extension for firefox
 Name: firefox-ext-speed-dial
-Version: 0.9.5.1
-Release: %mkrel 5
+Version: 0.9.5.9
+Release: %mkrel 1
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Networking/WWW
 URL: http://speeddial.uworks.net/
 Source: http://speeddial.uworks.net/speed_dial-%version-fx.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: firefox = %{firefox_epoch}:%{firefox_version}
+BuildArch: noarch
+Requires: firefox >= %{firefox_epoch}:%{firefox_version}
 BuildRequires: firefox-devel
 
 %description
@@ -27,11 +26,9 @@ contextual area menu.
 %prep
 %setup -q -c -n %{name}-%{version}
 
-%build
-
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_mozillaextpath}
+mkdir -p %{buildroot}%{firefox_extdir}
 
 hash="$(sed -n '/.*em:id="\(.*\)"/{s//\1/p;q}' install.rdf)"
 if [ -z "$hash" ]; then
@@ -41,7 +38,7 @@ if [ -z "$hash" ]; then
     echo "Failed to find plugin hash."
     exit 1
 fi
-extdir="%{_mozillaextpath}/$hash"
+extdir="%{firefox_extdir}/$hash"
 mkdir -p "%{buildroot}$extdir"
 cp -af * "%{buildroot}$extdir/"
 
@@ -50,4 +47,4 @@ rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%{_mozillaextpath}/*
+%{firefox_extdir}/*
