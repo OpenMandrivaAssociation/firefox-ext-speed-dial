@@ -6,7 +6,7 @@ Version: 0.9.5.9
 Release: 4
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Networking/WWW
-URL: http://speeddial.uworks.net/
+URL: https://speeddial.uworks.net/
 Source: http://speeddial.uworks.net/speed_dial-%version-fx.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
